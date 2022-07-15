@@ -1,1 +1,0 @@
-# practic_c_sharp_1
