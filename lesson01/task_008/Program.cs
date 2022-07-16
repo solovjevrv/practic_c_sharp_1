@@ -2,10 +2,11 @@
 Задача № 8
 Вывести на экран числа от -N до N
 */
-int start = -10;
-int end = 10;
-while (start <= end)
+int N = 10;
+int Nneg = -N;
+
+while (Nneg <= N)
 {
-    System.Console.Write($"{start} ");
-    start++;
+    System.Console.Write($"{Nneg} ");
+    Nneg++;
 }
