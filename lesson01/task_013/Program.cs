@@ -2,8 +2,11 @@
 Задача № 13
 Удалить вторую цифру целого числа введенного с клавиатуры.
 */
-// System.Console.WriteLine("Введите целое число: ");
-// int num = int.Parse(Console.ReadLine());
+System.Console.WriteLine("Введите целое число: ");
+int num = int.Parse(Console.ReadLine());
+int last_digit = num % 10;
+int numPart = num / 100;
+System.Console.WriteLine($"{numPart}{last_digit}");
 
 // int num = 12345;
 // int i = 0;
