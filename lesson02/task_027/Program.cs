@@ -12,11 +12,10 @@ int getExp (int A, int B)
 {
     for (int i = 1; i<=B; i++)
     {
-        exp *= A * A;
+        exp *= A;
     }
     return exp;
 
 }
-System.Console.WriteLine(getExp(A, B));
+System.Console.WriteLine($"Число А в степени В равно: {getExp(A, B)}");
 
-//$"Сумма чисел от 1 до {num} равна: {getSum(num)}"
