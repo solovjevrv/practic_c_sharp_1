@@ -1,31 +1,52 @@
 ﻿/*
 Задача № 34
-Задать массив из 12 элементов, заполненных числами из [-9, 9]. Найти сумму положительных/отрицательных элементов массива
+Задать массив из 12 элементов, заполненных числами из [-9, 9]. 
+Найти сумму положительных/отрицательных элементов массива
 */
 
-int N = 12;
-int [] a = new int[N];
-Random random = new Random();
+int [] arr;
+Init(out arr, 12, -9, 9);
+Print(arr);
 
-for (int i = 0; i < a.Length; i++)
-    a[i] = random.Next(-9, 10);
+int sumPos;
+int sumNeg;
 
-for (int i = 0; i < a.Length; i++)
-    System.Console.Write($"{a[i]} ");
-    System.Console.WriteLine();
+Solve(arr, out sumPos, out sumNeg);
+System.Console.WriteLine($"\nСумма положительных элементов массива равна: {sumPos}");
+System.Console.WriteLine($"Сумма отрицательных элементов массива равна: {sumNeg}");
+// инициализация массива
+void Init (out int[] arr, int Length, int min, int max)
+{
+    arr = new int [Length];
+    Random rand = new Random();
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = rand.Next(min, max+1);
+    }
+}
+// вывод массива
+void Print (int [] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        System.Console.Write($"{arr[i]} ");
 
-int sumPos = 0;
-for (int i = 0; i < a.Length; i++)
-    if (a[i] > 0)
-        sumPos += a[i];
-
-System.Console.WriteLine(sumPos);
-
-int sumNeg = 0;
-for (int i = 0; i < a.Length; i++)
-    if (a[i] < 0)
-        sumNeg += a[i];
-
-System.Console.WriteLine(sumNeg);
-
-
+    }
+}
+// решение задачи
+void Solve (int [] arr, out int sumPos, out int sumNeg)
+{
+    sumPos = 0;
+    sumNeg = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] > 0)
+        {
+            sumPos += arr[i];
+        }
+        else 
+        {
+            sumNeg += arr[i];
+        }
+    }
+}
