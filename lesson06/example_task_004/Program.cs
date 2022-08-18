@@ -30,9 +30,9 @@ for (int i = 0; i < a.GetLength(0); i++)
     {
       min = a[i, j];
       mini = i;
-      minj = j;
+      maxj = j;
     }
   }
 
 }
-System.Console.WriteLine(a[mini, minj]);
+System.Console.WriteLine(a[mini, maxj]);
